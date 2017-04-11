@@ -1,37 +1,33 @@
 package com.wbl.oops;
 
-public class Training {
+public abstract class Training {
 	
 	public Training(){
-		System.out.println("Default Constructor");
+		System.out.println("abstract class constructor");
 	}
 	
-	public Training(String name){
-		System.out.println("parameterised Constructor"+ name);
+	// variables are allowed in abstract class
+	public String name;
+	
+	//concrete methods - method which have method body/implementation
+	public void getRecordings(){
+		System.out.println("Recordings to qa and ui");
 	}
 	
-	public Training(String name, int id){
-		System.out.println("parameterised Constructor"+ name + id);
+	public void getPresentations(){
+		System.out.println("presentations available to QA and UI");
 	}
 	
-	public Training(String name, String id){
-		System.out.println("parameterised Constructor"+ name + id);
-	}
+	//abstract methods - method which do not have method body/implementation
+	public abstract String displayCourseContent();
 	
-	protected String course="QA";
+	//abstract methods - method which do not have method body/implementation
+	public abstract void toolsAndSetup();
 	
-	public void displaySubjects(){
-
-		System.out.println("start of displaysubjects");
-		String result = subjects();
-		System.out.println(result);
-		System.out.println("end of displaysubjects");
-		
-	}
+	//abstract methods - method which do not have method body/implementation
+	public abstract void interviewPrep();
 	
-	public String subjects(){
-		System.out.println("start of subjects");
-		return "Java,Webdriver,RestAPI";
-	}
+	public abstract int countOfClasses();
+	
 
 }
