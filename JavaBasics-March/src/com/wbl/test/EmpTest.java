@@ -1,7 +1,7 @@
 package com.wbl.test;
 
-import com.wbl.oops.Employee;
-import com.wbl.oops.HREmployee;
+import com.wbl.basics.Employee;
+import com.wbl.basics.HREmployee;
 
 public class EmpTest {
 

@@ -1,6 +1,6 @@
 package com.wbl.test;
 
-import com.wbl.oops.Mobile;
+import com.wbl.basics.Mobile;
 
 public class TestMobile {
 

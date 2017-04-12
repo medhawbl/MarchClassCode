@@ -1,4 +1,4 @@
-package com.wbl.oops;
+package com.wbl.basics;
 
 public class Training {
 	

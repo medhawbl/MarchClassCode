@@ -4,15 +4,26 @@ import com.wbl.oops.Training;
 
 public class TestTraining extends Training{
 
-	public void test(){
-		System.out.println(course);
-		displaySubjects();
+	
+	@Override
+	public String displayCourseContent() {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	public static void main(String[] args) {
-		Training tr = new Training();
-		//System.out.println(tr.course);
-		tr.displaySubjects();		
-
+	@Override
+	public void toolsAndSetup() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void interviewPrep() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public int countOfClasses() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
