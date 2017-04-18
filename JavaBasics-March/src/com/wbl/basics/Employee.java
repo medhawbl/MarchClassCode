@@ -10,6 +10,7 @@ public class Employee {
 	//global variables or class level variables
 	public String name;
 	public int id;
+	public int salary;
 	String greet="helloworld";	
 
 	public static int count=0;
@@ -22,10 +23,11 @@ public class Employee {
 	}
 	
 	//constructor 
-	public Employee(String name,int id){
+	public Employee(String name,int id, int salary){
 		System.out.println("constructor is called first...");
 		this.name = name;
-		this.id= id;		
+		this.id= id;	
+		this.salary=salary;
 		++count;
 	}
 	

@@ -14,7 +14,7 @@ public class DataTypes {
 		char ch='a';
 		boolean bool = true;
 		
-		//String is class in java- belowe statement means we are creating String class object.
+		//String is class in java- below statement means we are creating String class object.
 		String greet = "hello";
 		
 		System.out.println(b);
