@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="mysuite" junit="true">
+
+<listeners>
+    <listener class-name="com.wbl.testng.TestBasicString" />
+</listeners>
+
+<test name="test1">
+<!-- parameter name="input" value="Hello World"></parameter>
+<parameter name="input1" value="How are You"></parameter-->
+<!--groups>
+<run>
+<include name = "smoketest"></include>
+</run>
+</groups-->
+<classes>
+<class name="com.wbl.testng.TestBasicString"/>
+</classes>
+</test>
+
+<!-- test name="test2">
+<classes>
+<class name="com.wbl.testng.TestCalculator2">
+</class>
+</classes>
+</test--> 
+
+</suite>
