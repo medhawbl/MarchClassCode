@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.wbl.basics.HomePage">
+      <class name="com.wbl.basics.SelectAndRadioAndWebElementMethods">
         <methods>
-          <include name="afterMethod"/>
-          <include name="searchBox"/>
           <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="registerExampleWithWebElementMethods"/>
         </methods>
-      </class> <!-- com.wbl.basics.HomePage -->
+      </class> <!-- com.wbl.basics.SelectAndRadioAndWebElementMethods -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
