@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,20 +32,20 @@ public class SelectAndRadioAndWebElementMethods {
 				"C:/Users/WBL/MedhaMarchWorkspace/WebDriver/resources/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		// Load the browser with required URL.
-		driver.get("https://www.google.com/gmail/about/");
-		System.out.println("Home Page:" + driver.getTitle());
+		//driver.get("https://www.google.com/gmail/about/");
+		//System.out.println("Home Page:" + driver.getTitle());
 		// wait for 30 seconds - if element is not found
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		// maximising browser window
-		driver.manage().window().maximize();
-		sassert = new SoftAssert();
+		//driver.manage().window().maximize();
+		//sassert = new SoftAssert();
 	}
 
 	/**
 	 * @throws InterruptedException
 	 * 
 	 */
-	@Test(priority = 1)
+	@Test(enabled=false, priority = 1)
 	public void selectExample() throws InterruptedException {
 
 		// select example
@@ -79,7 +80,7 @@ public class SelectAndRadioAndWebElementMethods {
 
 	}
 
-	@Test(enabled = true, priority = 0)
+	@Test(enabled = false, priority = 0)
 	public void registerExampleWithWebElementMethods() throws InterruptedException {
 		// webelement findelement method example
 		WebElement element = driver.findElement(By.cssSelector(".gmail-nav__nav-link.gmail-nav__nav-link__create-account"));
@@ -128,6 +129,63 @@ public class SelectAndRadioAndWebElementMethods {
 		Thread.sleep(5000);
 		driver.findElement(By.id("submitbutton")).click();
 		System.out.println(driver.getTitle());
+	}
+	
+	@Test(enabled = false)
+	public void radioButtonExample() throws InterruptedException{
+		driver.get("https://www.facebook.com/");
+		driver.findElement(By.id("u_0_1")).sendKeys("Innovapath");
+		WebElement element = driver.findElement(By.id("month"));
+		Select select = new Select(element);
+		select.selectByVisibleText("Mar");
+		
+		
+		select = new Select(driver.findElement(By.id("day")));
+		select.selectByIndex(18);
+		
+		select = new Select(driver.findElement(By.id("year")));
+		select.selectByValue("2000");
+		
+		WebElement element1 = driver.findElement(By.id("u_0_g"));
+		element1.click();
+		System.out.println("Element is selected : " +element1.isSelected());
+		Thread.sleep(200);
+		
+	}
+	
+	@Test(enabled=false)
+	public void multipleSelect() throws InterruptedException{
+		driver.get("http://wenzhixin.net.cn/p/multiple-select/docs/");
+		Select select = new Select(driver.findElement(By.xpath("//*[@id='e1_f']/select")));
+		select.selectByVisibleText("March");
+		Thread.sleep(200);
+		select.selectByIndex(5);
+		Thread.sleep(200);
+		select.selectByValue("7");
+		Thread.sleep(200);
+		
+		select.deselectByVisibleText("March");
+		Thread.sleep(200);
+		
+	}
+	
+	@Test
+	public void getLocationExample(){
+		driver.get("http://whiteboxqa.com/");
+		List<WebElement> elements = driver.findElements(By.cssSelector(".fa.fa-google-plus"));
+		for(WebElement ele : elements){
+			Point point =ele.getLocation();
+			System.out.println("X : " + point.x);
+			System.out.println("Y : " + point.y);
+			if(point.x == 944 && point.y == 17){
+				ele.click();
+			}
+			
+			Dimension dimension = ele.getSize();
+			System.out.println("X : " + dimension.height);
+			System.out.println("Y : " + dimension.width);
+			
+		}
 	}
 
 	@AfterClass
